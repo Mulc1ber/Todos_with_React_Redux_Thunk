@@ -1,6 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Input } from '../Input/Input';
-// import { TodoContext } from '../../context';
 import styles from './Search.module.css';
 import { useDispatch } from 'react-redux';
 import { setSearchValue } from '../../Actions';

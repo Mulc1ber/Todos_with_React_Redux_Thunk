@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Input } from '../Input/Input';
 import { Button } from '../Button/Button';
-import styles from './AddTodo.module.css';
 import { addTodo } from '../../Actions';
+import styles from './AddTodo.module.css';
 
 export const AddTodo = () => {
     const [newTodo, setNewTodo] = useState('');

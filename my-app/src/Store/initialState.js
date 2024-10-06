@@ -1,6 +1,6 @@
 export const initialState = {
     listTodos: [],
-    isLoading: false,
+    // isLoading: false,
     inputTodo: '',
     hasSort: false,
 };

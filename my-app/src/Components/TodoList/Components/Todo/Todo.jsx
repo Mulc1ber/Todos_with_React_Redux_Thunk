@@ -1,19 +1,16 @@
 import { useState, useRef, useEffect } from 'react';
 import { Input } from '../../../Input/Input';
 import { Button } from '../../../Button/Button';
-import styles from './Todo.module.css';
 import { useDispatch } from 'react-redux';
 import { deleteTodo, updateTodo } from '../../../../Actions';
+import styles from './Todo.module.css';
 
 export const Todo = ({ id, title, index }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [titleState, setTitleState] = useState(title);
 
     const dispatch = useDispatch();
-
     const refInput = useRef();
-
-    // const handleInputBlur = (id) => {};
 
     const handleDeleteTodo = (id) => {
         dispatch(deleteTodo(id));
@@ -23,14 +20,15 @@ export const Todo = ({ id, title, index }) => {
         dispatch(updateTodo(id, titleState));
         setIsEditing(false);
     };
+
     const handleCancel = () => {
         setIsEditing(false);
+        setTitleState(title);
     };
 
     useEffect(() => {
         if (isEditing || isEditing === 0) {
-            // console.log(isEditing, 'isEditing');
-            // refInput.current?.focus();
+            refInput.current?.focus();
         }
     }, [isEditing]);
 
@@ -42,8 +40,7 @@ export const Todo = ({ id, title, index }) => {
                         type="text"
                         value={titleState}
                         onChange={({ target }) => setTitleState(target.value)}
-                        // onBlur={handleInputBlur}
-                        // refInput={refInput}
+                        refInput={refInput}
                         className={styles.inputEdit}
                     />
                     <Button onClick={handleSave.bind(null, id)}>Сохранить</Button>

@@ -1,21 +1,3 @@
-// const setListTodosRequest = () => {
-//     return { type: 'GET_LIST_TODOS_REQUEST' };
-// };
-
-// const setListTodosSuccess = (listTodos) => {
-//     return {
-//         type: 'GET_LIST_TODOS_SUCCESS',
-//         payload: listTodos,
-//     };
-// };
-
-// const setListTodosError = (error) => {
-//     return {
-//         type: 'GET_LIST_TODOS_ERROR',
-//         payload: error,
-//     };
-// };
-
 export const setListTodos = () => {
     return async (dispatch) => {
         try {

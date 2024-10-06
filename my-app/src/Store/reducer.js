@@ -19,12 +19,11 @@ export const reducer = (state = initialState, action) => {
         case 'DELETE_TODO':
             return { ...state, listTodos: state.listTodos.filter((todo) => todo.id !== payload) };
         case 'UPDATE_TODO':
-            console.log(payload);
             return {
                 ...state,
                 listTodos: state.listTodos.map((todo) => {
                     if (todo.id === payload.id) {
-                        return { ...todo, ...payload.title };
+                        return { ...todo, title: payload.title };
                     } else {
                         return todo;
                     }
